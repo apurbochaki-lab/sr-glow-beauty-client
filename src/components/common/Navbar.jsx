@@ -3,13 +3,13 @@
 import { useMemo } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, ShoppingBag, MessageCircle, LayoutDashboard } from "lucide-react";
+import { Home, ShoppingBag, MessageCircle, LayoutDashboard, Heart, HeartIcon } from "lucide-react";
 
 export default function Navbar() {
     const pathname = usePathname();
 
     // Session o Role-er dummy data
-    const session = true;
+    const session = false;
     const role = "Admin";
 
     // Ekhon shudhu isAdmin true holei Dashboard dekhabe
@@ -20,15 +20,15 @@ export default function Navbar() {
         const links = [
             { name: "Home", href: "/", icon: <Home size={20} /> },
             { name: "Shop", href: "/shop", icon: <ShoppingBag size={20} /> },
+            { name: "Favorite", href: "/favorite", icon: <Heart size={20} /> },
             { name: "WhatsApp", href: "/whatsapp", icon: <MessageCircle size={20} /> },
         ];
 
+        // Admin Routes
         if (isAdmin) {
-            links.push({
-                name: "Dashboard",
-                href: "/dashboard",
-                icon: <LayoutDashboard size={20} />,
-            });
+            links.push(
+                { name: "Dashboard", href: "/dashboard", icon: <LayoutDashboard size={20} />, }
+            );
         }
 
         return links;
