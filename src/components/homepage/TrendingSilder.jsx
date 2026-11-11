@@ -13,27 +13,34 @@ import "swiper/css/navigation";
 const slides = [
     {
         id: 1,
+        title: "Hero",
+        image: "/images/Hero.jpg",
+        alt: "Glow serum collection banner with skincare bottles",
+        link: "/shop/serum-collection",
+    },
+    {
+        id: 2,
         title: "Glow Serum Collection",
         image: "/images/trending-1.jpg",
         alt: "Glow serum collection banner with skincare bottles",
         link: "/shop/serum-collection",
     },
     {
-        id: 2,
+        id: 3,
         title: "Matte Lipstick Edit",
         image: "/images/trending-2.jpg",
         alt: "Matte lipstick collection in berry plum shades",
         link: "/shop/matte-lipstick",
     },
     {
-        id: 3,
+        id: 4,
         title: "Skincare Essentials",
         image: "/images/trending-3.jpg",
         alt: "Skincare essentials banner with moisturizer and serum",
         link: "/shop/skincare-essentials",
     },
     {
-        id: 4,
+        id: 5,
         title: "Festive Beauty Box",
         image: "/images/trending-4.jpg",
         alt: "Limited edition festive beauty box with cosmetics",
@@ -47,18 +54,15 @@ export default function TrendingSlider() {
             className="w-full bg-[#F9F3EF] py-10 md:py-10 dark:bg-[#30232B]"
             aria-labelledby="trending-heading"
         >
-            <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-                <h2
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                {/* <h2
                     id="trending-heading"
                     className="mb-6 text-2xl font-semibold text-[#30232B] md:mb-8 md:text-3xl dark:text-[#F9F3EF]"
                 >
                     Trending Now
-                </h2>
+                </h2> */}
 
-                {/* 
-          suppressHydrationWarning={true} যোগ করা হয়েছে। 
-          এটি Next.js-কে বলে যে এই কম্পোনেন্টের ভেতরে ছোটখাটো টাইম ডিফারেন্স এরর থাকলে সেটা ইগনোর করে রেন্ডার করতে।
-        */}
+                {/* suppressHydrationWarning={true} যোগ করা হয়েছে। এটি Next.js-কে বলে যে এই কম্পোনেন্টের ভেতরে ছোটখাটো টাইম ডিফারেন্স এরর থাকলে সেটা ইগনোর করে রেন্ডার করতে।*/}
                 <div suppressHydrationWarning={true} className="w-full">
                     <Swiper
                         modules={[Autoplay, Pagination, Navigation, A11y]}
@@ -66,7 +70,7 @@ export default function TrendingSlider() {
                         slidesPerView={1}
                         loop={true}
                         autoplay={{
-                            delay: 4000,
+                            delay: 5000,
                             disableOnInteraction: false,
                             pauseOnMouseEnter: true
                         }}
