@@ -1,6 +1,5 @@
 "use client";
 
-
 import ProductCard from "@/components/common/ProductCard";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { data } from "./data";
@@ -13,6 +12,7 @@ export default function Shop({
 }) {
 
     const products = data;
+    // Array validation
     const productList = Array.isArray(products) ? products : [];
 
     const basePath = productBasePath.replace(/\/$/, "");
