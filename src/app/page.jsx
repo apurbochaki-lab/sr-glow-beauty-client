@@ -1,7 +1,7 @@
 import Announcement from '@/components/homepage/Announcement';
 import BrandNotes from '@/components/homepage/BrandNotes';
 import PopularCategories from '@/components/homepage/PopularCategories';
-import TrendingSlider from '@/components/homepage/TrendingSilder';
+import TrendingSliderParent from '@/components/homepage/TrendingSlider/TrendingSilderParent';
 import React from 'react';
 
 const HomePage = () => {
@@ -9,7 +9,7 @@ const HomePage = () => {
     <section>
       <Announcement />
 
-      <TrendingSlider />
+      <TrendingSliderParent />
       <PopularCategories />
 
       <BrandNotes />
