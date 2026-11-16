@@ -44,17 +44,19 @@ export default function ProductCard({
         productName,
         shortDescription,
         category,
-        images = [],
+        primaryImage = {},
         pricing = {},
         updatedAt,
     } = product;
 
-    const primaryImage = images.find((image) => image.isPrimary === true) || images[0];
     const imageUrl = primaryImage?.url;
     const imageAlt = primaryImage?.alt || productName || "Product image";
 
+
     const regularPrice = Number(pricing.regularPrice);
     const salePrice = pricing.salePrice === null || pricing.salePrice === undefined ? null : Number(pricing.salePrice);
+
+
     const currentPrice = salePrice !== null && Number.isFinite(salePrice) ? salePrice : regularPrice;
     const hasDiscount = salePrice !== null && Number.isFinite(salePrice) && Number.isFinite(regularPrice) && salePrice < regularPrice;
 

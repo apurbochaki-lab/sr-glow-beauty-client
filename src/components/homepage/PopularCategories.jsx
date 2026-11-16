@@ -73,7 +73,8 @@ export default function PopularCategories() {
                         <motion.div key={i} variants={cardFadeUp}>
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="h-full">
                                 <Link
-                                    href={`/shop?category=${cat.name.replace(' ', '+')}`}
+                                    // href={`/shop?category=${cat.name.replace(' ', '+')}`}
+                                    href={`/shop?category=${encodeURIComponent(cat.name)}`}
                                     className="group h-full p-3 md:p-5 bg-[#EBC9D0]/30 dark:bg-[#EBC9D0]/10 border border-[#EBC9D0] rounded-xl md:rounded-2xl hover:border-[#762D49] dark:hover:border-[#B98A52] hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center gap-2 md:gap-3"
                                 >
                                     {/* আইকন কন্টেইনার */}
