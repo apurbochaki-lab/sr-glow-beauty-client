@@ -54,10 +54,16 @@ export default async function Shop({
                         {subtitle}
                     </p>
 
+                    <div className="pt-2 font-playfair font-semibold text-[#762D49] text-[18px] lg:text-xl">
+                        <h2>Total Products : {response.totalProducts}</h2>
+                    </div>
+
                     {/* Minimal Gold Divider */}
                     <div className="mx-auto mt-4 h-[2px] w-12 rounded-full bg-[#B98A52]" />
+
                 </div>
 
+                {/* Search Filter Functionality */}
                 <ProductFilter categories={response.categories} />
 
                 {/* Products Grid */}
@@ -69,7 +75,7 @@ export default async function Shop({
                                     {
                                         productList.map((product, index) => {
                                             const productHref = product.slug
-                                                ? `${basePath}/${product.slug}`
+                                                ? `${basePath}/product/${product.slug}`
                                                 : "/shop";
 
                                             return (
@@ -90,6 +96,7 @@ export default async function Shop({
                                 </div>
                             </LazyMotion>
 
+                            {/* Pagination Component */}
                             <Pagination currentPage={response.currentPage} totalPages={response.totalPages} />
                         </>
                     ) : (

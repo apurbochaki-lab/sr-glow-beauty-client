@@ -7,6 +7,7 @@ import {
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
+import { Suspense } from "react";
 
 // English Heading
 const playfair = Playfair_Display({
@@ -53,7 +54,11 @@ export default function RootLayout({ children }) {
         className="min-h-full flex flex-col"
         style={{ fontFamily: "var(--font-dm-sans)" }}
       >
-        <Navbar />
+
+        <Suspense fallback={<div className="h-[72px] bg-[#F9F3EF] border-b border-[#EBC9D0]"></div>}>
+          <Navbar />
+        </Suspense>
+
         {children}
         <Footer />
       </body>

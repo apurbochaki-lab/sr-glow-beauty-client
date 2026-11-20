@@ -35,7 +35,7 @@ function formatUpdatedDate(value) {
 
 export default function ProductCard({
     product,
-    productHref = "/shop",
+    productHref = "/product",
     index = 0,
     isPriority = false,
 }) {

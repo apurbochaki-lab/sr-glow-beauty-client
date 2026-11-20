@@ -9,7 +9,6 @@ export const serverFetch = async (path) => {
     if (!res.ok) {
         throw new Error(`Failed to fetch data: ${res.status}`);
     }
-    console.log(res.ok)
 
     return res.json();
 }

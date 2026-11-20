@@ -1,7 +1,7 @@
 import { serverFetch } from "../actions/server"
 
 export const getProducts = (page, search, category, sort) => {
-    console.log("FROM CLIENT --->", category)
+    // console.log("FROM CLIENT --->", category)
 
     // Category & Encode problem 
     const params = new URLSearchParams()
@@ -14,4 +14,11 @@ export const getProducts = (page, search, category, sort) => {
     return serverFetch(`/api/products?${params.toString()}`)
 
     // return serverFetch(`/api/products?page=${page}&search=${search}&category=${category}&sort=${sort}`);
+}
+
+
+
+// Single product details
+export const getProductBySlug = (slug) => {
+    return serverFetch(`/api/product-details/${slug}`)
 }

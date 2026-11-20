@@ -33,7 +33,7 @@ export default function ProductFilter({ categories = [] }) {
             params.delete(key);
         }
 
-        router.push(`${pathname}?${params.toString()}`, { scroll: false });
+        router.push(`${pathname}?${params.toString()}`, { scroll: true });
     };
 
     // সার্চ সাবমিট হ্যান্ডলার (বাটনে ক্লিক বা Enter চাপলে)
@@ -90,7 +90,7 @@ export default function ProductFilter({ categories = [] }) {
                     onChange={(e) => updateQuery("category", e.target.value)}
                     className="w-full sm:w-auto border border-[#EBC9D0] bg-[#F9F3EF] text-[#30232B] px-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#762D49] focus:border-transparent shadow-sm cursor-pointer transition-all font-dm-sans text-sm dark:bg-[#493540]/40 dark:text-[#F9F3EF] dark:border-[#EBC9D0]/20"
                 >
-                    <option value="">All Categories</option>
+                    <option value="All">All Categories</option>
                     {categories.map((cat, index) => (
                         <option key={index} value={cat}>
                             {cat}
